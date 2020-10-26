@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AppHeader from '../AppHeader/AppHeader'
 
 const App = () => {
+  const [text, setText] = useState('Parcel + React is pretty spiffy')
+
   return (
-    <main>
-      <header>
-        <h1>Parcel + React is pretty spiffy</h1>
-      </header>
-    </main>
+    <>
+      <AppHeader text={text} />
+      <main></main>
+    </>
   )
 }
 
-export { App as default }
+export default App
