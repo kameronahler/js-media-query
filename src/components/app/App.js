@@ -2,30 +2,33 @@ import React, { useState } from 'react'
 import AppHeader from '../AppHeader/AppHeader'
 
 const App = () => {
-  const [text, setText] = useState(() => 'load')
-  const sm = window.matchMedia('(min-width: 600px)')
-  const md = window.matchMedia('(min-width: 1024px)')
-  const lg = window.matchMedia('(min-width: 1440px)')
-  const xl = window.matchMedia('(min-width: 1920px)')
+  const breakpointSM = window.matchMedia('(min-width: 600px)')
+  const breakpointMD = window.matchMedia('(min-width: 1024px)')
+  const breakpointLG = window.matchMedia('(min-width: 1440px)')
+  const breakpointXL = window.matchMedia('(min-width: 1920px)')
+  const breakpoints = [breakpointSM, breakpointMD, breakpointLG, breakpointXL]
 
-  const updateText = () => {
-    if (xl.matches) {
-      setText('xl')
-    } else if (lg.matches) {
-      setText('lg')
-    } else if (md.matches) {
-      setText('md')
-    } else if (sm.matches) {
-      setText('sm')
+  const updateTextState = () => {
+    if (breakpointXL.matches) {
+      return 'xl'
+    } else if (breakpointLG.matches) {
+      return 'lg'
+    } else if (breakpointMD.matches) {
+      return 'md'
+    } else if (breakpointSM.matches) {
+      return 'sm'
     } else {
-      setText('mobile')
+      return 'mobile'
     }
   }
 
-  sm.addListener(updateText)
-  md.addListener(updateText)
-  lg.addListener(updateText)
-  xl.addListener(updateText)
+  breakpoints.forEach((bp) => {
+    bp.addListener(() => setText(updateTextState))
+  })
+
+  const [text, setText] = useState(() => {
+    return updateTextState()
+  })
 
   return (
     <>
