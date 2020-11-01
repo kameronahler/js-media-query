@@ -1,0 +1,36 @@
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.app-header__heading {
+  text-align: center;
+
+  &--static {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 1em;
+  }
+
+  &--animated {
+    display: inline-block;
+    font-weight: 800;
+    position: relative;
+
+    &::after {
+      animation: blink infinite alternate steps(2, jump-none) 0.5s;
+      background-color: gray;
+      content: '';
+      height: 100%;
+      min-width: 1px;
+      position: absolute;
+      right: -0.125rem;
+      top: 0;
+      width: 0.125rem;
+    }
+  }
+}
