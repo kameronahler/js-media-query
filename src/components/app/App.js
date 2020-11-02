@@ -35,10 +35,25 @@ const App = () => {
     )
   })
 
+  // conditional css
+  const addModifiers = () => {
+    if (breakpointXL.matches) {
+      return 'app--xl'
+    } else if (breakpointLG.matches) {
+      return 'app--lg'
+    } else if (breakpointMD.matches) {
+      return 'app--md'
+    } else if (breakpointSM.matches) {
+      return 'app--sm'
+    } else {
+      return 'app--mobile'
+    }
+  }
+
   return (
-    <>
+    <div className={`app ${addModifiers()}`}>
       <AppHeader mediaQuery={mediaQuery} />
-    </>
+    </div>
   )
 }
 

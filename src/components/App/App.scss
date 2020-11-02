@@ -7,6 +7,28 @@ body {
 }
 
 .app {
+  color: rgba(white, 0.8);
   display: flex;
   min-height: 100vh;
+  transition: background-color 1s ease-out;
+
+  &--mobile {
+    background-color: #004f6f;
+  }
+
+  &--sm {
+    background-color: #00386f;
+  }
+
+  &--md {
+    background-color: #00206f;
+  }
+
+  &--lg {
+    background-color: #000a6f;
+  }
+
+  &--xl {
+    background-color: #21006f;
+  }
 }

@@ -14,7 +14,6 @@ const AppHeaderHeading = ({ mediaQuery }) => {
     })
 
     const oldLetters = oldText.split('')
-    console.log(oldText)
     const newLetters = mediaQuery.split('')
 
     // delete
@@ -40,7 +39,6 @@ const AppHeaderHeading = ({ mediaQuery }) => {
   }
 
   const oldText = textRef.current
-  console.log(oldText)
 
   // did mount
   useEffect(() => {
