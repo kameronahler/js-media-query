@@ -12,13 +12,15 @@
     "components": "^0.1.0",
     "gsap": "^3.5.1",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.27.0"
   },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --public-url ./"
   }
 }
