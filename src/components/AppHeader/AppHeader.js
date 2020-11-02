@@ -1,10 +1,10 @@
 import React from 'react'
 import AppHeaderHeading from '../AppHeaderHeading/AppheaderHeading'
 
-const AppHeader = () => {
+const AppHeader = ({ mediaQuery }) => {
   return (
     <header className='app-header'>
-      <AppHeaderHeading />
+      <AppHeaderHeading mediaQuery={mediaQuery} />
     </header>
   )
 }
