@@ -48,7 +48,9 @@ const AppHeaderHeading = ({ mediaQuery }) => {
 
   return (
     <h1 className='app-header__heading'>
-      <span className='app-header__heading--static'>Breakpoint is:</span>
+      <span className='app-header__heading--static'>
+        The current breakpoint is
+      </span>
       <span className='app-header__heading--animated' ref={textWrapper}></span>
     </h1>
   )

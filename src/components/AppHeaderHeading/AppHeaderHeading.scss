@@ -12,21 +12,32 @@
 
   &--static {
     display: block;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 400;
     margin-bottom: 1em;
   }
 
   &--animated {
     display: inline-block;
-    font-weight: 800;
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
     position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 0.0625rem;
+    }
 
     &::after {
       animation: blink infinite alternate steps(2, jump-none) 0.5s;
       background-color: gray;
       content: '';
       height: 100%;
-      min-width: 1px;
+      min-width: 0.0625rem;
       position: absolute;
       right: -0.125rem;
       top: 0;

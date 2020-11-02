@@ -31,7 +31,7 @@ const App = () => {
     breakpoint.addListener(() =>
       setTimeout(() => {
         setMediaQuery(updateBreakpoint)
-      }, 1000)
+      }, 1500)
     )
   })
 
