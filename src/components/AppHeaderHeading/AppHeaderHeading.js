@@ -15,7 +15,7 @@ const AppHeaderHeading = () => {
     } else if (breakpointLG.matches) {
       return 'LG (1440-1919px)'
     } else if (breakpointMD.matches) {
-      return 'MD (1024-1339px)'
+      return 'MD (1024-1439px)'
     } else if (breakpointSM.matches) {
       return 'SM (600-1023px)'
     } else {
@@ -43,7 +43,7 @@ const AppHeaderHeading = () => {
   const animateText = () => {
     const tl = gsap.timeline({
       paused: true,
-      defaults: { duration: 0.1, ease: 'none' },
+      defaults: { duration: 0.05, ease: 'none' },
     })
 
     const oldLetters = oldText.split('')
@@ -84,7 +84,7 @@ const AppHeaderHeading = () => {
   return (
     <h1 className='app-header__heading'>
       <span className='app-header__heading--static'>Breakpoint is:</span>
-      <span className='app-header__heading-- animated' ref={textWrapper}></span>
+      <span className='app-header__heading--animated' ref={textWrapper}></span>
     </h1>
   )
 }
